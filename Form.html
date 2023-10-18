@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="Form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Survey Form</h1>
+
+        <form id="surveyForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Select Country</option>
+                    <option value="IND">INDIA</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="RUSSIA">RUSSIA</option>
+                    <option value="CANADA">CANADA</option>
+                    <option value="GERMANY">GERMANY</option>
+                    <option value="JAPAN">JAPAN</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="checkbox" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="checkbox" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+            <div class="form-group">
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="firstTime">Is this your first time using our product & Service?</label>
+                <div class="radio-options">
+                    <input type="radio" id="firstTimeYes" name="firstTime" value="Yes" required>
+                    <label for="firstTimeYes">Yes</label>
+                    <input type="radio" id="firstTimeNo" name="firstTime" value="No">
+                    <label for="firstTimeNo">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="satisfaction">How satisfied are you with our company overall?</label>
+                <div class="radio-options">
+                    <input type="radio" id="satisfactionSatisfied" name="satisfaction" value="Satisfied" required>
+                    <label for="satisfactionSatisfied">Satisfied</label>
+                    <input type="radio" id="satisfactionUnsatisfied" name="satisfaction" value="Unsatisfied">
+                    <label for="satisfactionUnsatisfied">Unsatisfied</label>
+                    <input type="radio" id="satisfactionUndecided" name="satisfaction" value="Undecided">
+                    <label for="satisfactionUndecided">Undecided</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="suggestions">Do you have any suggestions to improve our services?</label>
+                <textarea id="suggestions" name="suggestions"></textarea>
+            </div>
+            <div class="button-group">
+                <button type="button" id="submitButton" onclick="submitForm()">Submit</button>
+                <button type="button" id="resetButton" onclick="resetForm()">Reset</button>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none">
+                Please fill in all required fields.
+            </div>
+            
+        </form>
+        <div id="successMessage" class="success-message" style="display: none">
+            Submitted Successfully
+            <button type="button" id="submitAgainButton" onclick="submitAgain()">Submit Again</button>
+        </div>
+        <div class="copyright">
+            Copyright © 2023 All Rights Reserved by Praveen Guttikonda
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Survey Form Data</h2>
+            <div id="popupData"></div>
+
+        </div>
+        
+    </div>
+
+
+    <script src="Form.js"></script>
+</body>
+</html>
